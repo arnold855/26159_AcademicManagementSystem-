@@ -133,14 +133,13 @@ registrations(id PK, registration_date, academic_year, semester, status, grade,
 ### Step 1 – Build & Run
 
 ```bash
-# From the project root (where pom.xml lives)
 cd path/to/AcademicManagementSystem
 
 # Run the application
-./mvnw spring-boot:run
+./mvn spring-boot:run
 ```
 
-On Windows use `mvnw.cmd` instead of `./mvnw`:
+On Windows use `mvnw.cmd` 
 ```cmd
 mvnw.cmd spring-boot:run
 ```
@@ -177,10 +176,8 @@ Tests use an H2 in-memory database
 -- Connect to the database
 psql -U postgres -d university_academic_db
 
--- List all tables
 \dt
 
--- Check foreign keys
 SELECT conname, conrelid::regclass AS table, confrelid::regclass AS references
 FROM pg_constraint
 WHERE contype = 'f'
@@ -221,12 +218,3 @@ Image 006
 <img width="920" height="186" alt="number6" src="https://github.com/user-attachments/assets/7eb46560-5617-40ae-a441-4061a295cefc" />
 
 ---
-
-## Key Design Decisions
-
-- **LAZY fetching everywhere** – avoids N+1 queries and infinite recursion when entities are serialised.
-- **equals/hashCode on `id` only** – safe for JPA entities; avoids issues with detached/proxied objects.
-- **toString excludes collections** – prevents lazy-loading exceptions and infinite recursion.
-- **Registration as a join entity** – chosen over `@ManyToMany` because it carries extra data (grade, status, dates) that a plain join table cannot hold.
-- **Spring Boot 3.3.0 / Jakarta EE 10** – uses `jakarta.persistence.*` (not `javax`), compatible with Java 21.
-- **H2 for tests** – `@DataJpaTest` spins up an in-memory DB so tests are fast and self-contained.

@@ -196,12 +196,29 @@ SELECT * FROM registrations;
 
 ### Step 4 – Screenshots
 
-1. pgAdmin showing `university_academic_db` with all 7 tables in the tree
-2. pgAdmin ERD view (right-click database → ERD Tool) showing all tables and FK lines
-3. Terminal showing the `SEED DATA VERIFICATION` block after `spring-boot:run`
-4. Terminal showing `BUILD SUCCESS` after `./mvnw test`
-5. psql output of `\dt` listing all tables
-6. psql output of the FK query above
+Image 001
+
+<img width="960" height="519" alt="number1" src="https://github.com/user-attachments/assets/d2e3f11c-62e3-4792-9f9f-9ceb74664bd3" />
+
+Image 002
+
+<img width="652" height="434" alt="number2" src="https://github.com/user-attachments/assets/16de10a2-694d-49f9-b4e9-e5e4d7ca7735" />
+
+Image 003
+
+<img width="960" height="520" alt="number3" src="https://github.com/user-attachments/assets/12dc6854-39c1-479b-bcaf-a9c03828e213" />
+
+Image 004
+
+<img width="960" height="522" alt="number4" src="https://github.com/user-attachments/assets/ab4c4e8f-063d-487b-9365-8548c16d560f" />
+
+Image 005
+
+<img width="957" height="326" alt="number5" src="https://github.com/user-attachments/assets/7bb79ef7-1468-4940-b9c6-621cc4ebe7bd" />
+
+Image 006
+
+<img width="920" height="186" alt="number6" src="https://github.com/user-attachments/assets/7eb46560-5617-40ae-a441-4061a295cefc" />
 
 ---
 
